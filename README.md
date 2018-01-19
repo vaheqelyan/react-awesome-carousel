@@ -1,5 +1,9 @@
 ## React-awesome-carousel
 
+[Demo](https://ovlwxk3xqy.codesandbox.io/)
+
+![](https://ucarecdn.com/ab0f255b-512f-42ef-a543-9e36e1543399/ezgifcomoptimize.gif)
+
 ### Installation
 
 ---
@@ -85,17 +89,17 @@ Set the value `true` for `enableScrollbar` and place the `Scrollbar` argument in
 
 ```jsx
 <Carousel enableScrollbar={true} {...}>
-	{(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar) => {
-		return (
-			<div>
-				<div {...galleryProps}>
+  {(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar) => {
+    return (
+      <div>
+        <div {...galleryProps}>
           <ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
         </div>
         {Scrollbar}
-			</div>
-		);
-	}}
-</Carousel>
+      </div>
+    );
+  }}
+</Carousel>;
 ```
 
 ![](http://res.cloudinary.com/dxv8p5zck/image/upload/q_auto/v1516364197/ezgif.com-video-to-gif_3_rz7zun.gif)
@@ -165,17 +169,17 @@ import { Carousel, Dots } from "react-awesome-carousel";
 
 ```jsx
 <Carousel {...}>
-	{(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar, DotsProps) => {
-		return (
-			<div>
-				<div {...galleryProps}>
-					<ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
-				</div>
-				<Dots renderDots={renderDots} goTo={i => goTo(i)} {...DotsProps} /> // here is your dots
-			</div>
-		);
-	}}
-</Carousel>
+  {(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar, DotsProps) => {
+    return (
+      <div>
+        <div {...galleryProps}>
+          <ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
+        </div>
+        <Dots renderDots={renderDots} goTo={(i) => goTo(i)} {...DotsProps} /> // here is your dots
+      </div>
+    );
+  }}
+</Carousel>;
 ```
 
 Render your dots with `renderDots`
