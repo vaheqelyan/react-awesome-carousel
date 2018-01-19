@@ -24,7 +24,8 @@ export default {
 			include: "node_modules/**"
 		}),
 		alias({
-			react: "node_modules/react/umd/react.development.js"
+			react: "node_modules/react/umd/react.development.js",
+			"react-dom": "./node_modules/reac-dom/react-dom.development.js"
 		})
 	],
 	external: ["react"],
