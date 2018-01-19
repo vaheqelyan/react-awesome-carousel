@@ -23,7 +23,7 @@ yarn add react-awesome-carousel
 **via CDN (unpkg)**
 
 ```code
-https://unpkg.com/react-awesome-carousel@1.0.0/dest/react-awesome-carousel.js
+https://unpkg.com/react-awesome-carousel@1.0.5/dest/react-awesome-carousel.js
 ```
 
 UMD library exposed as `ReactAwesomeCarousel`
@@ -41,7 +41,7 @@ import "react-awesome-carousel/react-awesome-carousel.css";
 **via CDN (unpkg)**
 
 ```code
-https://unpkg.com/react-awesome-carousel@1.0.0/dest/react-awesome-carousel.css
+https://unpkg.com/react-awesome-carousel@1.0.5/dest/react-awesome-carousel.css
 ```
 
 The basic carousel sample.The Carousel component returns a callback function with the following arguments.
