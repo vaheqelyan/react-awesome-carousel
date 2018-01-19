@@ -329,7 +329,8 @@ Carousel.defaultProps = {
 	infinite: false,
 	nextAfterFetchStarts: 0,
 	vertical: false,
-	style: {}
+	style: {},
+	data: []
 };
 
 export default Carousel;
