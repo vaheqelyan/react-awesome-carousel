@@ -1,6 +1,6 @@
 {
 	"name": "react-awesome-carousel",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dest/react-awesome-carousel.js",
 	"description": "Simple,Touch-Friendly carousel component for React.js",
 	"license": "MIT",
