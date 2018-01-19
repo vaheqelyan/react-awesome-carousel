@@ -69,10 +69,6 @@ export default class Dots extends React.Component {
 			c.push(this.props.renderDots(i, this.goTo, this.state.s[i].active, this.activePosition));
 		}
 
-		return (
-			<ul className="--rac-component-dots" {...this.props}>
-				{c}
-			</ul>
-		);
+		return <ul className="--rac-component-dots">{c}</ul>;
 	}
 }
