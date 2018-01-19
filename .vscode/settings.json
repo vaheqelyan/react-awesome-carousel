@@ -1,0 +1,9 @@
+{
+	"prettier.printWidth": 150,
+	"prettier.tabWidth": 3,
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"eslint.enable": false,
+	"editor.fontSize": 18,
+	"javascript.validate.enable": false
+}
