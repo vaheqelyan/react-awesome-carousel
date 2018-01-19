@@ -292,19 +292,15 @@ class Carousel extends React.Component {
 		);
 
 		return (
-			<div
-				ref="c"
-				className="--rac-component-carousel --rac-component-noselect"
-				style={{ ...{ width: `${calc_carousel_width}px` }, ...this.props.style }}
-			>
+			<div ref="c" className="--rac-component-carousel" style={{ ...{ width: `${calc_carousel_width}px` }, ...this.props.style }}>
 				{this.props.children(
 					{
 						style: { width: `${calc_carousel_width}px` },
-						className: "--rac-component-gallery --rac-component-noselect"
+						className: "--rac-component-gallery"
 					},
 					{
 						style: { marginLeft: `${this.state.marginLeft}px` },
-						className: "--rac-component-ul --rac-component-noselect"
+						className: "--rac-component-ul"
 					},
 					data,
 					step,
