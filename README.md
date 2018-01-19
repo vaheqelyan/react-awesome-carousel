@@ -25,7 +25,7 @@ https://unpkg.com/react-awesome-carousel@1.0.0/dest/react-awesome-carousel.js
 UMD library exposed as `ReactAwesomeCarousel`
 
 ```js
-const { Slick, Dots } = ReactAwesomeCarousel;
+const { Carousel, Dots } = ReactAwesomeCarousel;
 ```
 
 ### Stylesheet
@@ -40,31 +40,31 @@ import "react-awesome-carousel/react-awesome-carousel.css";
 https://unpkg.com/react-awesome-carousel@1.0.0/dest/react-awesome-carousel.css
 ```
 
-The basic carousel sample.The slick component returns a callback function with the following arguments.
+The basic carousel sample.The Carousel component returns a callback function with the following arguments.
 So, you can deeply customize the render.
 
 `galleryProps` and `ulProps` must be passed down to the elements
 
 ```jsx
-<Slick itemWidth={320} showCount={4} data={this.state.data}>
+<Carousel itemWidth={320} showCount={4} data={this.state.data}>
 	{(galleryProps, ulProps, data) => {
 		return (
 			<div>
 				<div {...galleryProps}>
-					<ul {...ulProps}>{this.state.data.map(renderRow)}</ul>
+					<ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
 				</div>
 			</div>
 		);
 	}}
-</Slick>
+</Carousel>
 ```
 
-But the Slick component also returns other arguments, like `step`, `goTo`, `next`, `prev`, `Scrollbar`, `DotsProps`
+But the Carousel component also returns other arguments, like `step`, `goTo`, `next`, `prev`, `Scrollbar`, `DotsProps`
 
 ### Moving and Touching
 
 ```jsx
-<Slick enableMoving={true} ... />
+<Carousel enableMoving={true} ... />
 ```
 
 ![](https://res.cloudinary.com/dxv8p5zck/image/upload/q_auto/v1516352523/rac-prev-move_kp9fxa.gif)
@@ -74,7 +74,7 @@ But the Slick component also returns other arguments, like `step`, `goTo`, `next
 For the component to work, for example, on mobile devices, set the value to true for touching.
 
 ```jsx
-<Slick enableMoving touch />
+<Carousel enableMoving touch />
 ```
 
 ![](https://ucarecdn.com/1586c7c1-6912-4378-b108-cb7ddb488883/ezgifcomgifmaker.gif)
@@ -84,18 +84,18 @@ For the component to work, for example, on mobile devices, set the value to true
 Set the value `true` for `enableScrollbar` and place the `Scrollbar` argument in your jsx template
 
 ```jsx
-<Slick enableScrollbar={true} {...}>
+<Carousel enableScrollbar={true} {...}>
 	{(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar) => {
 		return (
 			<div>
 				<div {...galleryProps}>
-          <ul {...ulProps}>{this.state.data.map(renderRow)}</ul>
+          <ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
         </div>
         {Scrollbar}
 			</div>
 		);
 	}}
-</Slick>
+</Carousel>
 ```
 
 ![](http://res.cloudinary.com/dxv8p5zck/image/upload/q_auto/v1516364197/ezgif.com-video-to-gif_3_rz7zun.gif)
@@ -113,7 +113,7 @@ Set the value `true` for the prop `autoCalculate`.
 For example, you want to fetch data or trigger some function when you reach the end of the carousel.
 
 ```jsx
-<Slick onReachEnd={::this.fn} />
+<Carousel onReachEnd={::this.fn} />
 ```
 
 You specified a function, but you also need to tell the component when to run it.
@@ -129,7 +129,7 @@ It has a few props
 Also, there is a prop `nextAfterFetchStart`.it accepts the number.When you want to display a spinner while extracting data, you will surely want to see the spinner .when the spinner will be shown you will do the following.
 
 ```jsx
-<Slick onReachEnd={::this.fn} onReachForMove nextAfterFetchStarts={10} /> // 10ms
+<Carousel onReachEnd={::this.fn} onReachForMove nextAfterFetchStarts={10} /> // 10ms
 ```
 
 After 10 milliseconds you will go to the next item, which means that you will see a spinner.
@@ -139,13 +139,13 @@ After 10 milliseconds you will go to the next item, which means that you will se
 ```jsx
 this.setState({ data: this.state.data.concat({ status: "LOADING" }) });
 
-const renderRow = (value, index) =>
+const renderItem = (value, index) =>
 	typeof value === "object" ? (
-		<li className="renderRow" key={index}>
+		<li className="renderItem" key={index}>
 			<h1>Loading...</h1>
 		</li>
 	) : (
-		<li className="renderRow" key={index}>
+		<li className="renderItem" key={index}>
 			<h1>{value}</h1>
 		</li>
 	);
@@ -158,24 +158,24 @@ const renderRow = (value, index) =>
 import `Dots` component from the package.
 
 ```jsx
-import { Slick, Dots } from "react-awesome-carousel";
+import { Carousel, Dots } from "react-awesome-carousel";
 ```
 
 **`DotsProps` must be passed to the `Dots` component**
 
 ```jsx
-<Slick {...}>
+<Carousel {...}>
 	{(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar, DotsProps) => {
 		return (
 			<div>
 				<div {...galleryProps}>
-					<ul {...ulProps}>{this.state.data.map(renderRow)}</ul>
+					<ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
 				</div>
 				<Dots renderDots={renderDots} goTo={i => goTo(i)} {...DotsProps} /> // here is your dots
 			</div>
 		);
 	}}
-</Slick>
+</Carousel>
 ```
 
 Render your dots with `renderDots`
@@ -193,25 +193,25 @@ const renderDots = (index, goTo, active) => (
 Use the arguments `next()` and `prev()` from the callback.
 
 ```jsx
-<Slick {...}>
+<Carousel {...}>
 	{(galleryProps, ulProps, data, step, goTo, next, prev, Scrollbar, DotsProps) => {
 		return (
 			<div>
 				<button onClick={() => next()}>Prev</button>
 				<div {...galleryProps}>
-					<ul {...ulProps}>{this.state.data.map(renderRow)}</ul>
+					<ul {...ulProps}>{this.state.data.map(renderItem)}</ul>
 				</div>
 				<Dots renderDots={renderDots} goTo={i => goTo(i)} {...DotsProps} /> // here is your dots
 				<button onClick={() => prev()}>Next</button>
 			</div>
 		);
 	}}
-</Slick>
+</Carousel>
 ```
 
 ### Props
 
-### Slick Props
+### Carousel Props
 
 <table>
   <tr>
@@ -248,11 +248,6 @@ Use the arguments `next()` and `prev()` from the callback.
     <td>showCount</td>
     <td>Number</td>
     <td>Sets the count of items in carousel.</td>
-  </tr>
-  <tr>
-    <td>renderRow</td>
-    <td>Function</td>
-    <td>This prop is not optional.It renders the items </td>
   </tr>
   <tr>
     <td>onReachEnd</td>
