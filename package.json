@@ -1,6 +1,6 @@
 {
 	"name": "react-awesome-carousel",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "dest/react-awesome-carousel.js",
 	"description": "Simple,Touch-Friendly carousel component for React.js",
 	"license": "MIT",
@@ -25,7 +25,8 @@
 		"rollup-plugin-commonjs": "^8.2.6",
 		"rollup-plugin-node-resolve": "^3.0.0",
 		"rollup-plugin-replace": "^2.0.0",
-		"rollup-watch": "^4.3.1"
+		"rollup-watch": "^4.3.1",
+		"react-dom": "^16.2.0"
 	},
 	"dependencies": {
 		"react": "^16.2.0"
